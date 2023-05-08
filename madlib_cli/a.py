@@ -1,9 +1,7 @@
-import re 
-def parse_template(row_text):
-    print(type(row_text))
-    stripped = re.sub("{\w*}", "{}" , row_text )
-    parts = tuple(re.findall("\{(.*?)\}", row_text))
-    return stripped , parts
+def merge(stripped_txt,input_arr):
 
+    appnd = stripped_txt.format(*input_arr)
+    return appnd
 
-print( parse_template("It was a {Adjective} and {Adjective} {Noun}."))
+print(merge('It was a {} and {} {}.',['dark', 'stormy', 'night']))
+

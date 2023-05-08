@@ -30,9 +30,9 @@ def parse_template(row_text):
     parts = tuple(re.findall("\{(.*?)\}", row_text))
     return stripped , parts
 
-def merge():
-    pass
-
+def merge(stripped_txt,input_arr):
+    appnd = stripped_txt.format(*input_arr)
+    return appnd
 
 if __name__ == '__main__':
     welcome ()
