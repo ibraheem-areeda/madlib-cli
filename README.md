@@ -1,6 +1,6 @@
 # File IO and Exceptions - Class 03 
 ## Project: madlib-cli 
-## Author: ibraheem areeda
+## Author: Ibraheem areeda
 ###  initialize/run the application
 ```
 python madlib_cli/madlib.py
