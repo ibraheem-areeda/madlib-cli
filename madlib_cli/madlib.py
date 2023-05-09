@@ -24,7 +24,7 @@ def read_template(dir):
         return row_text
     
 def parse_template(row_text):
-    stripped = re.sub("{\w*}", "{}" , row_text )
+    stripped = re.sub("\{(.*?)\}", "{}" , row_text )
     parts = tuple(re.findall("\{(.*?)\}", row_text))
     return stripped , parts
 
@@ -38,10 +38,12 @@ def write_txt_file(user_answer):
         result_file.write(user_answer)
 
 def user_input (arr):
-    print (arr)
     user_input=[]
+    n = len(arr)
     for word in arr:
-        user_input.append(input(f"please inter {word} : ") )
+        n=n-1
+        user_input.append(input(f" {n} remaning words, please enter {word} : ") )
+        
     return user_input
 
 
@@ -64,9 +66,9 @@ if __name__ == '__main__':
 
     user_input_words= user_input (list(parts))
 
-    print(user_input_words)
-
-    user_output = str(f"Your funny story --> {merge(stripped,user_input_words)}\n")
+    user_output = str(f"""
+Your funny story --> {merge(stripped,user_input_words)}
+    """)
 
     write_txt_file((user_output))
 
