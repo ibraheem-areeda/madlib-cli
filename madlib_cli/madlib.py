@@ -52,9 +52,11 @@ def user_input (arr):
 
 
 if __name__ == '__main__':
-    dir ="assets/dark_and_stormy_night_template.txt"
 
-    row_text = read_template(dir)
+    dir1 ="assets/short_text.txt"
+    dir2 ="assets/long_text.txt"
+
+    row_text = read_template(dir1)
 
     print(row_text)
 
